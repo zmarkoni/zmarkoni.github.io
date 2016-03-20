@@ -1,0 +1,21 @@
+.navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+    .navbar-collapse {
+        padding: 0;
+        max-height: none;
+    }
+}
+.navbar-default {
+    background: none;
+    border: none;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border: none;
+}
+ul.no-bullets {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}

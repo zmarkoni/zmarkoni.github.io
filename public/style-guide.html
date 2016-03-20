@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		.stylesheet-container{
+			width: 90%;
+			margin: 20px auto;
+		}
+		.style-info{
+			font-size: 0.83em;
+			text-align: center;
+			padding-bottom: 20px;
+		}
+		.card{
+			width: 100%;
+		    background: #fff;
+		    margin-bottom: 10px;
+		    border-radius: 5px;
+		    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+		    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+		    position: relative;
+		    padding: 30px 40px 30px 40px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="stylesheet-container">
+		<div class="card">
+			<h1 class="logo">"SuperCell
+			<svg width="40px" viewBox="0 0 493 393" xmlns="http://www.w3.org/2000/svg"><g fill="#4A4A4A" fill-rule="evenodd"><path d="M140.305 22.393c-23.196 9.055-19.388 25.662-17.602 26.08 23.637-3.082 85.7-16.29 176.757-9.794 92.317 9.333 117.1 19 154.336 33.34 1.38 1.413 21.767-17.584 2.216-33.34-19.55-15.758-61.56-33.127-154.446-37.24-58.957-2.613-122.096 2.03-161.26 20.953z"/><path d="M40.75 162.79s44.236-35.972 127.443-43.944c83.207-7.97 140.68-1.408 140.68-1.408l30.29-30.295-6.676 32.176s102 18.558 118.208 43.47c22.532-2.472 38.797-25.118 41.68-43.47-.972-27.973-62.973-75.413-233.86-75.413S-4.517 86.554 1.042 122.937C6.602 159.32 40.75 162.79 40.75 162.79z"/><path d="M101.103 223.35l86.18-99.795s-118.617 5.176-135 55.41c-3.885 27.326 48.82 44.384 48.82 44.384zM193.43 123.262s50.588-2.09 61.854-2.09c11.266 0 46.853 2.354 46.853 2.354l-84.353 84.853-41.913-2.56 17.56-82.558zM331.05 127.262s109.002 16.587 109.002 52.145c0 35.558-51.472 43.5-51.472 43.5l15.68-21.823-87.298-6.854 14.088-66.968z"/><path d="M99.84 248.164l68.15-78.942-10.99 51.19 44.266 2.445-69.487 97.697 13.46-71.44-45.4-.95zM268.203 262.942l-24.416 129.273 132.606-178.53-77.046-4.953 13.894-75.408-120.906 125.15 75.87 4.468z"/></g></svg>
+			    <span>Style Guide</span>"</h1>
+			<div class="style-info"><a href="/">HOME</a></div>
+			<p>This page is a basic style guide for your app.  <strong>By default most styles are turned off.</strong>  Styles can be turned on in the "src/scss/style.scss" file by uncommenting the sections you would like to add to your app.  Only use the ones that you need to keep your files as small as possible.</p>
+			<p>All CSS assumes a mobile-first approach. Media queries are handeled as mixins.  See "src/scss/_base.scss" for example on how to use them.</p>
+		</div>
+		<div class="card">
+
+			<h1>Header one</h1>
+		    <h2>Header two</h2>
+		    <h3>Header three</h3>
+		    <h4>Header four</h4>
+		    <h5>Header five</h5>
+		    <h6>Header six</h6>
+		    <hr>
+
+
+		   <h2>Body Copy</h2>
+		   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores voluptatum illum, ducimus tempore, id dignissimos molestias amet odit atque vero rem recusandae cumque a magnam velit in vitae, facere aperiam?</p>
+		   <p style="text-align:center;">Code example: <code>&lt;section&gt;</code></p>
+		   <p style="text-align:center;"><code>&lt;pre&gt;</code> example:</p>
+		   <pre>&lt;p&gt;Put your code here&lt;/p&gt;</pre>
+		   <hr>
+
+
+			<h2>Table</h2>
+			<div class="style-info">
+				Additional classes (add to <code>&lt;table&gt;</code>) <code>.table-striped</code><br>
+				To make responsive wrap <code>&lt;table&gt;</code> in <code>&lt;div class="table-responsive"&gt;</code>
+			</div>
+
+
+			<div class="table-responsive">
+				<table role="grid">
+			      <thead>
+			        <tr>
+			          <th>Table Header</th>
+			          <th>Table Header</th>
+			          <th>Table Header</th>
+			          <th>Table Header</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			        <tr>
+			          <td>Lorem ipsum</td>
+			          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, ad</td>
+			          <td>Lorem ipsum</td>
+			          <td>Lorem ipsum</td>
+			        </tr>
+			       	<tr>
+			          <td>Lorem ipsum</td>
+			          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, ad</td>
+			          <td>Lorem ipsum</td>
+			          <td>Lorem ipsum</td>
+			        </tr>
+			       	<tr>
+			          <td>Lorem ipsum</td>
+			          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, ad</td>
+			          <td>Lorem ipsum</td>
+			          <td>Lorem ipsum</td>
+			        </tr>
+			      </tbody>
+			    </table>
+		    </div>
+		    <hr>
+
+
+	       <h2>Forms</h2>
+	        <form method="">
+
+	            <p><label for="text">Text</label><br>
+	            <input type="text" name="text1" ></p>
+
+	            <p><label for="password">Password</label><br>
+	            <input type="password" name="password1" /></p>
+
+	            <p><label for="date">Date</label><br>
+	            <input type="date" name="date1" pattern="\d{4}-\d{2}-\d{2}" placeholder="YYY-MM-DD" title="YYY-MM-DD"></p>
+
+	            <p><label for="color">Color</label><br>
+	            <input type="color" name="color1" value="#336699"></p>
+
+	            <p><label for="email">Email (multible coma seperate)</label><br>
+	            <input type="email" name="email1"></p>
+
+	            <p><label for="range">Range (1-100 is steps of 10)</label><br>
+	            <input type="range" name="range1" min="0" max="100" step="10" value="20"></p>
+
+	            <p><label for="search">Search</label><br>
+	            <input type="search" name="date1"></p>
+
+	            <p><label for="url">URL</label><br>
+	            <input type="url" name="url1"></p>
+
+	            <p><label for="text-area">Text Area</label><br>
+	            <textarea name="textarea1" rows="8" cols="50"></textarea></p>
+
+				<p><label for="numbers">Number (1-5)</label><br>
+	            <input type="number" name="number1" min="1" max="5" value="1"></p>
+
+	            <p><label for="check-box">Check boxes:</label><br>
+	            <input type="checkbox" name="check1" checked ><span>checkone</span><br>
+	            <input type="checkbox" name="check2"><span>checkone</span><br>
+	            <input type="checkbox" name="check3"><span>checkone</span><br>
+	            </p>
+
+	            <p>
+	            <label for="radios">Radios</label><br>
+	            <input type="radio" name="radio1" value="one" checked="checked"><label>check one</label><br>
+	            <input type="radio" name="radio1" value="two"><label>check two</label><br>
+	            <input type="radio" name="radio1" value="three"><label>check three</label><br>
+	            </p>
+
+	            <p>
+	            <label for="select-list">Select List</label><br>
+	            <select name="select1">
+	                <option value="" disabled selected>-- Select an option --</option>
+	                <optgroup label="Group 1">
+	                    <option value="option1">option1</option>
+	                    <option value="option2">option2</option>
+	                    <option value="option3">option3</option>
+	                </optgroup>
+	                <optgroup label="Group 2">
+	                    <option value="option1">option1</option>
+	                    <option value="option2">option2</option>
+	                    <option value="option3">option3</option>
+	                </optgroup>
+	            </select>
+	            </p>
+
+	            <p>
+	            <label for="select-list-multiple">Select List (multiple)</label><br>
+	            <select name="select1" size="8" multiple><!--  width="100" style="width: 100px" (not html5) -->
+	                <optgroup label="Group 1">
+	                    <option value="option1">option1</option>
+	                    <option value="option2">option2</option>
+	                    <option value="option3">option3</option>
+	                </optgroup>
+	                <optgroup label="Group 2">
+	                    <option value="option1">option1</option>
+	                    <option value="option2">option2</option>
+	                    <option value="option3">option3</option>
+	                </optgroup>
+	            </select>
+	            </p>
+	            <input type="hidden" name="userid" value="12345"> <!-- hidden fields use JS to alter values -->
+	            <input type="hidden" name="statement" value="Cool Moves"> <!-- hidden fields can use JS to alter values -->
+	        </form>
+			<hr>
+
+
+
+			<h2>Buttons</h2>
+			<a class="button" href="#">Link</a>
+			<button class="button" type="submit">Button</button>
+			<button disabled="disabled">Disabled Button</button>
+			<input class="button" type="button" value="Input">
+			<input class="button" type="submit" value="Submit">
+			<input type="image" class="img-button" src="http://placehold.it/100x34" name="submit1" value="Image Button">
+			<p><a class="button expanded" href="#">.expanded</a></p>
+
+			<a class="button success" href="#">.success</a>
+			<a class="button info" href="#">.info</a>
+			<a class="button warning" href="#">.warning</a>
+			<a class="button danger" href="#">.danger</a>
+
+			<p>Button Group</p>
+			<ul class="button-group">
+			  <li><a href="#" class="button">Button 1</a></li>
+			  <li><a href="#" class="button">Button 2</a></li>
+			  <li><a href="#" class="button">Button 3</a></li>
+			</ul>
+	        <hr>
+
+			<h2>Icons</h2>
+			<p style="text-align:center;"><code>&lt;i class="fa fa-apple"&gt;</code></p>
+			<p style="text-align:center;"><i class="fa fa-apple"></i></p>
+			<hr>
+
+			<div class="panel">
+	            <h2>Panel</h2>
+	            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, sequi, vel illo nesciunt provident voluptate officia minima distinctio a laborum officiis corporis sapiente autem excepturi quod facere odit ea cumque!</p>
+	        </div>
+	        <div class="panel success">
+	            <h2>panel.success</h2>
+	            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, sequi, vel illo nesciunt provident voluptate officia minima distinctio a laborum officiis corporis sapiente autem excepturi quod facere odit ea cumque!</p>
+	        </div>
+	        <div class="panel info">
+	            <h2>panel.info</h2>
+	            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, sequi, vel illo nesciunt provident voluptate officia minima distinctio a laborum officiis corporis sapiente autem excepturi quod facere odit ea cumque!</p>
+	        </div>
+	        <div class="panel warning">
+	            <h2>panel.warning</h2>
+	            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, sequi, vel illo nesciunt provident voluptate officia minima distinctio a laborum officiis corporis sapiente autem excepturi quod facere odit ea cumque!</p>
+	        </div>
+	        <div class="panel danger">
+	            <h2>panel.danger</h2>
+	            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, sequi, vel illo nesciunt provident voluptate officia minima distinctio a laborum officiis corporis sapiente autem excepturi quod facere odit ea cumque!</p>
+	        </div>
+		</div><!--  end CARD -->
+	</div><!--  end container -->
+
+<br>
+<br>
+<br>
+</body>
+</html>

@@ -1,0 +1,41 @@
+// ***********************************
+// Custom styles
+// ***********************************
+.vertical_line {
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 30%;
+        height: 100%;
+        width: 4px;
+        margin-left: -2px;
+        background: #d7e4ed;
+    }
+}
+.profile_section {
+    .profile_description {
+        text-align: center;
+    }
+    .about_me {
+        padding-right: 80px;
+    }
+    .profile_img {
+        display: block;
+        width: 246px;
+        height: 246px;
+        border-radius: 50%;
+    }
+}
+.experiance_section {
+    // @extend .vertical_line;
+}
+.education_section {
+    // @extend .vertical_line;
+}
+.skills_section {
+    .section_subtitle_description {
+        text-align: center;
+    }
+
+}

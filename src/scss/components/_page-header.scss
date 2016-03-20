@@ -1,0 +1,36 @@
+.page_header {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    z-index: 3;
+}
+.parallax {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1000px;
+}
+.page_wrapper {
+    clear: both;
+    float: left;
+    width: 100%;
+    z-index: 3;
+    position: relative;
+    background-color: $white;
+}
+.header_bg {
+    position: relative;
+    float: left;
+    width: 100%;
+    background-image: url(/img/bg/header-bg2.jpg);
+    background-repeat: no-repeat;
+    // background-position: center;
+    background-size: 100%;
+    // background-size: cover;
+    z-index: 100;
+}
+

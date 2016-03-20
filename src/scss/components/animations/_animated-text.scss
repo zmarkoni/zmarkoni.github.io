@@ -1,0 +1,66 @@
+.text_logo {
+    display: block;
+    position: absolute;
+    width: 500px;
+    height: 293px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 35%;
+    padding: 0 15px;
+    color: $white;
+    // background: $screen_bg;
+    .text {
+        white-space: nowrap;
+        overflow: hidden;
+        width: 550px;
+        animation: type 4s steps(30, end);
+        &:nth-child(2) {
+            animation: type2 8s steps(30, end);
+        }
+        span {
+            animation: blink 1s infinite;
+        }
+    }
+    // .blink {
+    //     animation: 5s linear 3s normal none infinite text_logo_animation;
+    // }
+    .my_name {
+        font-family: "Courier", Arial, sans-serif;
+        margin-top: 70px;
+        margin-bottom: 20px;
+        // text-shadow: rgb(204, 204, 204) 0 1px 0px, rgb(201, 201, 201) 0 2px 0px, rgb(187, 187, 187) 0 3px 0px, rgb(185, 185, 185) 0 4px 0px, rgb(170, 170, 170) 0 5px 0px, rgba(0, 0, 0, 0.0980392) 0 6px 1px, rgba(0, 0, 0, 0.0980392) 0 0 5px, rgba(0, 0, 0, 0.298039) 0 1px 3px, rgba(0, 0, 0, 0.14902) 0 3px 5px, rgba(0, 0, 0, 0.2) 0 5px 10px, rgba(0, 0, 0, 0.2) 0 10px 10px, rgba(0, 0, 0, 0.0980392) 0 20px 20px;
+        border-bottom: 1px solid $white;
+        border-bottom-color: rgba(255,255,255,0.35);
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+    .resume_text {
+        font: normal 28px/1 "Courier", Arial, sans-serif;
+    }
+}
+@keyframes type {
+    from {
+        width: 0;
+    }
+}
+@keyframes type2 {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 0;
+    }
+    100% {
+        width: 100;
+    }
+}
+@keyframes blink {
+    to {
+        opacity: 0.0;
+    }
+}
+.animated_text {
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}

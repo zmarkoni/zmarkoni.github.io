@@ -1,0 +1,36 @@
+// ***********************************
+// BOOTSTRAP
+// ***********************************
+@import "../../node_modules/bootstrap/dist/css/bootstrap";
+
+// ***********************************
+// Normalize Reset
+// ***********************************
+@import "base/reset";
+
+// ***********************************
+// BASE STYLES
+// ***********************************
+@import "base/variables";
+@import "base/mixins";
+@import "base/typography"; // typography and links
+@import "base/media";
+@import "base/layout";
+
+// ***********************************
+// Custom styles
+// ***********************************
+@import "base/overide-bootstrap";
+@import "components/custom-buttons";
+@import "components/header";
+@import "components/page-header";
+@import "components/animations/animated-text";
+@import "components/animations/mouse";
+// @import "components/weather";
+@import "components/content";
+@import "components/animations/front-end-technologies";
+@import "components/animations/cube";
+
+@import "components/scroll-watch";
+
+@import "components/footer";

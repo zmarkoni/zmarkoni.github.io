@@ -1,0 +1,222 @@
+// ***********************************
+// MIXINS
+// ***********************************
+// Layput media queries
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: #{$desktop}) {
+      @content;
+    }
+  }
+  @else if $point == tablet {
+    @media (min-width: #{$mobile}) and (max-width: #{$desktop}) {
+      @content;
+    }
+  }
+  @else if $point == mobile {
+    @media (max-width: #{$mobile}) {
+      @content;
+    }
+  }
+  @else if $point == greaterthansmall {
+    @media (min-width: #{$mobile}) {
+      @content;
+    }
+  }
+  @else if $point == greaterthantablet {
+    @media (min-width: #{$tablet}) {
+      @content;
+    }
+  }
+  @else if $point == greaterthanmedium {
+    @media (min-width: #{$desktop}) {
+      @content;
+    }
+  }
+  @else if $point == betweenmediumsmall {
+    @media (min-width: #{$mobile}) and (max-width: #{$desktop}) {
+      @content;
+    }
+  }
+  @else if $point == tabletsmall {
+    @media (min-width: #{$tablet}) and (max-width: #{$desktop}-1) {
+      @content;
+    }
+  }
+  @else if $point == tabletbig {
+    @media (min-width: #{$mobile}) and (max-width: #{$tablet}-1) {
+      @content;
+    }
+  }
+}
+@mixin inmiddle($el, $width, $html, $fluid:100%) {
+  $margin: calc( ((#{$fluid} - (#{$el} * #{$width})) / (#{$el} )) / 2 );
+  $margin_neg: calc( ((-#{$fluid} + (#{$el} * #{$width})) / (#{$el} - 1 )) / 2 );
+  margin-left: $margin_neg;
+  margin-right: $margin_neg;
+  float: none;
+  width: auto;
+  & > #{$html} {
+    width: $width;
+    text-align: center;
+    margin-left: $margin;
+    margin-right: $margin;
+    display: block;
+    float: left;
+  }
+}
+@mixin inmiddle2($el, $width, $html, $fluid:100%) {
+  $margin: calc( ((#{$fluid} - (#{$el} * #{$width})) / (#{$el} )) / 2 );
+  $margin_neg: calc( ((-#{$fluid} + (#{$el} * #{$width})) / (#{$el} - 1 )) / 2 );
+  margin-left: $margin_neg;
+  margin-right: $margin_neg;
+  float: none;
+  width: auto;
+  & > .#{$html} {
+    width: $width;
+    margin-left: $margin;
+    margin-right: $margin;
+    display: block;
+    float: left;
+  }
+}
+// Sprite dimensions
+@mixin sprite-dimensions($map, $sprite) {
+  height: image-height(sprite-file($map, $sprite));
+  width: image-width(sprite-file($map, $sprite));
+}
+// Effects
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+@mixin rotate($angle) {
+  transform: rotate($angle);
+  -ms-transform: rotate($angle);
+  /* IE 9 */
+  -webkit-transform: rotate($angle);
+  /* Opera, Chrome, and Safari */
+  display: inline-block;
+}
+@mixin transition($time) {
+  -webkit-transition: all linear $time;
+  -moz-transition: all linear $time;
+  -ms-transition: all linear $time;
+  -o-transition: all linear $time;
+  transition: all linear $time;
+}
+@mixin transition-all($time:.5s) {
+  -webkit-transition: all $time ease-in-out;
+  -moz-transition: all $time ease-in-out;
+  -ms-transition: all $time ease-in-out;
+  -o-transition: all $time ease-in-out;
+  transition: all $time ease-in-out;
+}
+@mixin fade($time:0.3s) {
+  -webkit-transition: background-color $time ease-in-out;
+  -moz-transition: background-color $time ease-in-out;
+  -o-transition: background-color $time ease-in-out;
+  -ms-transition: background-color $time ease-in-out;
+  transition: background-color $time ease-in-out;
+}
+@mixin transparent-bg($opacity) {
+  background: transparent;
+  background: rgba(0,0,0,$opacity);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#7f000000,endColorStr=#7f000000);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000)";
+  zoom: 1;
+}
+@mixin gradient($color1, $color2) {
+  background: $color2;
+  background: -moz-linear-gradient(top, $color1 0%, $color2 75%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $color1), color-stop(75%, $color2));
+  background: -webkit-linear-gradient(top, $color1 0%, $color2 75%);
+  background: -o-linear-gradient(top, $color1 0%, $color2 75%);
+  background: -ms-linear-gradient(top, $color1 0%, $color2 75%);
+  background: linear-gradient(to bottom, $color1 0%, $color2 75%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='$color1', endColorstr='$color2',GradientType=0 );
+}
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+  -webkit-box-shadow: $top $left $blur $color #{$inset};
+  -moz-box-shadow: $top $left $blur $color #{$inset};
+  box-shadow: $top $left $blur $color #{$inset};
+}
+/*include mixin before backgroud color declaration*/
+/*MUST HAVE background-color NO background*/
+@mixin blendmode($type:null) {
+  @if $type != null {
+    background-blend-mode: $type;
+    background: linear-gradient(to top, black 0%,transparent 100%);
+  }
+}
+@mixin circle($size, $color) {
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+  background-color: $color;
+  background: $color;
+  display: inline-block;
+}
+// Text
+@mixin ellipsis($width) {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: $width;
+  white-space: nowrap;
+}
+@mixin simpleEllipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: $colorFontDark;
+}
+//add three dots(...) on the end of text, for custom number of columns
+@mixin multiLineEllipsis($maxWidth, $lineHeight, $lineCount, $bgColor) {
+  overflow: hidden;
+  position: relative;
+  max-width: $maxWidth;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bgColor;
+  }
+}
+// Border
+@mixin border-radius($value) {
+  -webkit-border-radius: $value;
+  -khtml-border-radius: $value;
+  -moz-border-radius: $value;
+  -ms-border-radius: $value;
+  border-radius: $value;
+}
+@mixin border-radius-custom($value_top_left, $value_top_right, $value_bottom_right, $value_bottom_left) {
+  border-top-left-radius: $value_top_left;
+  -moz-border-radius-topleft: $value_top_left;
+  -webkit-border-top-left-radius: $value_top_left;
+  border-top-right-radius: $value_top_right;
+  -moz-border-radius-topright: $value_top_right;
+  -webkit-border-top-right-radius: $value_top_right;
+  border-bottom-right-radius: $value_bottom_right;
+  -moz-border-radius-bottomright: $value_bottom_right;
+  -webkit-border-bottom-right-radius: $value_bottom_right;
+  border-bottom-left-radius: $value_bottom_left;
+  -moz-border-radius-bottomleft: $value_bottom_left;
+  -webkit-border-bottom-left-radius: $value_bottom_left;
+}

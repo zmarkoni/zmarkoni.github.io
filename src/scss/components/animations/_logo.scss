@@ -1,0 +1,201 @@
+.animated_logo {
+    $slack-size: 100px;
+    $dot-diameter: 10px;
+    $slack-angle: 15deg;
+    $animation-duration: 5s;
+    $animation-delay: 10s;
+    $slack-blue: $info;
+    $slack-yellow: $warning;
+    $slack-pink: $danger;
+    $slack-green: $success;
+    position: absolute;
+    display: block;
+    width: $slack-size;
+    height: $slack-size;
+    top: -20px;
+    left: -10px;
+    transform: scale(0.4,0.4);
+    z-index: 200;
+    .logo_dot {
+        display: block;
+        position: absolute;
+        width: $dot-diameter;
+        height: $dot-diameter;
+        border-radius: $dot-diameter/2;
+    }
+    .dot_1 {
+        bottom: calc(50% + 15px);
+        left: calc(50% - 5px);
+        background-color: $slack-green;
+        animation: dot_1_animation $animation-duration ease 1;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-delay: $animation-delay;
+    }
+    @keyframes dot_1_animation {
+        0% {
+            height: 10px;
+        }
+        100% {
+            height: 60px;
+        }
+    }
+    .dot_2 {
+        bottom: calc(50% - 5px);
+        left: calc(50% + 15px);
+        background-color: $slack-blue;
+        animation: dot_2_animation $animation-duration ease 1;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-delay: $animation-delay;
+    }
+    @keyframes dot_2_animation {
+        0% {
+            width: 10px;
+        }
+        100% {
+            width: 50px;
+        }
+    }
+    .dot_3 {
+        top: calc(50% + 15px);
+        left: calc(50% - 5px);
+        background-color: $slack-yellow;
+        animation: dot_3_animation $animation-duration ease 1;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-delay: $animation-delay;
+    }
+    @keyframes dot_3_animation {
+        0% {
+            height: 10px;
+        }
+        100% {
+            height: 60px;
+        }
+    }
+    .dot_4 {
+        bottom: calc(50% - 5px);
+        right: calc(50% + 15px);
+        background-color: $slack-pink;
+        animation: dot_4_animation $animation-duration ease 1;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-delay: $animation-delay;
+    }
+    @keyframes dot_4_animation {
+        0% {
+            width: 10px;
+        }
+        100% {
+            width: 50px;
+        }
+    }
+    .dot_5 {
+        top: 0;
+        left: 0;
+        background-color: $slack-green;
+        animation: dot_5_animation $animation-duration ease 1;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-delay: $animation-delay;
+        transform: rotate(45deg);
+    }
+    @keyframes dot_5_animation {
+        0% {
+            width: 10px;
+        }
+        100% {
+            top: 25%;
+            left: 15%;
+            width: 30px;
+        }
+    }
+    .dot_6 {
+        top: 0;
+        right: 0;
+        background-color: $slack-blue;
+        animation: dot_6_animation $animation-duration ease 1;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-delay: $animation-delay;
+        transform: rotate(130deg);
+    }
+    @keyframes dot_6_animation {
+        0% {
+            width: 10px;
+        }
+        100% {
+            top: 25%;
+            right: 15%;
+            width: 30px;
+        }
+    }
+    .dot_7 {
+        bottom: 0;
+        right: 0;
+        background-color: $slack-yellow;
+        animation: dot_7_animation $animation-duration ease 1;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-delay: $animation-delay;
+        transform: rotate(45deg);
+    }
+    @keyframes dot_7_animation {
+        0% {
+            width: 10px;
+        }
+        100% {
+            bottom: 25%;
+            right: 15%;
+            width: 30px;
+        }
+    }
+    .dot_8 {
+        bottom: 0;
+        left: 0;
+        background-color: $slack-pink;
+        animation: dot_8_animation $animation-duration ease 1;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-delay: $animation-delay;
+        transform: rotate(130deg);
+    }
+    @keyframes dot_8_animation {
+        0% {
+            width: 10px;
+        }
+        100% {
+            bottom: 25%;
+            left: 15%;
+            width: 30px;
+        }
+    }
+}
+/*=============================================================================*/
+/*================================== Logo Text ================================*/
+/*==============================================================================*/
+.logo_text {
+    float: left;
+    padding-left: 80px;
+    line-height: 58px;
+    .text {
+        font-size: 20px;
+        display: block;
+        float: left;
+        font-weight: bold;
+    }
+    .logo_text1 {
+        color: $danger;
+    }
+    .logo_text2 {
+        color: $warning;
+        letter-spacing: 2px;
+    }
+    .logo_text3 {
+        color: $info;
+    }
+    .logo_text4 {
+        color: $white;
+    }
+}

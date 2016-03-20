@@ -1,0 +1,170 @@
+// ***********************************
+// BUTTONS
+// ***********************************
+button {
+  font-size: 100%;
+  /* Corrects font size not being inherited in all browsers */
+  margin: 0;
+  /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+  vertical-align: baseline;
+  /* Improves appearance and consistency in all browsers */
+}
+.button,
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  display: inline-block;
+  position: relative;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: normal;
+  border: 0 none;
+  margin-top: 0 5px;
+  font-size: 14px;
+  @include fade;
+  font-weight: $font-weight-body;
+  font-family: $font-family-primary;
+  text-transform: capitalize;
+}
+@mixin button-size($padding-top-bottom, $padding-left-right, $font-size, $line-height, $border-radius) {
+  padding: $padding-top-bottom $padding-left-right;
+  font-size: $font-size;
+  line-height: $line-height;
+  @include border-radius($border-radius);
+  @media only screen and (max-width: 803px) {
+    padding: $padding-top-bottom $padding-left-right / 2;
+  }
+}
+@mixin button {
+  display: inline-block;
+  margin-bottom: 0;
+  // For input.btn
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
+  text-decoration: none;
+  @include user-select(none);
+  @include transition(0.3s);
+  &:active {
+    &:focus {
+      @include tab-focus;
+    }
+  }
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    @include opacity(0.9);
+    @include transition(0.3s);
+  }
+  &:active {
+    outline: 0;
+    box-shadow: none;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    pointer-events: none;
+    // Future-proof disabling of clicks
+    @include opacity(0.65);
+    box-shadow: none;
+  }
+}
+@mixin button_xs {
+  @include button;
+  @include button-size(1px, 2px, 14px, 14px, 0);
+}
+@mixin button_s {
+  @include button;
+  @include button-size(4px, 8px, 16px, 16px, 4px);
+}
+@mixin button_m {
+  @include button;
+  @include button-size(8px, 10px, 14px, 14px, 4px);
+}
+@mixin button_l {
+  @include button;
+  @include button-size(10px, 30px, 21px, 24px, 5px);
+}
+@mixin button_xl {
+  @include button;
+  @include button-size(15px, 20px, 30px, 30px, 8px);
+}
+@mixin button_custom($padding-top-bottom, $padding-left-right, $font-size, $line-height, $border-radius) {
+  @include button;
+  @include button-size($padding-top-bottom, $padding-left-right, $font-size, $line-height, $border-radius);
+}
+/*********************************************
+                  START
+             GLOBAL mixins for
+                  SKINS
+                  SIZE
+*********************************************/
+@mixin skin-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  background: $background;
+  border-color: $border;
+  &:hover,
+  &:focus,
+  &:active {
+    //     color: $color;
+    //     background-color: lighten($background, 8%);
+    @if ($background == white) {
+      background-color: darken($background, 8%);
+    }
+    @else {
+      background-color: lighten($background, 8%);
+    }
+    @include transition(0.3s);
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: $background;
+      border-color: $border;
+    }
+  }
+}
+@mixin skin_danger {
+  @include skin-variant($a_skin, $e_skin, $e_skin);
+}
+@mixin skin_deep {
+  @include skin-variant($a_skin, lighten($a_skin, 30%), $colorBorderDef);
+}
+@mixin skin_default {
+  @include skin-variant($a_skin, lighten($a_skin, 90%), lighten($a_skin, 80%));
+}
+@mixin skin_lady {
+  @include skin-variant($f_skin, $e_skin, $e_skin);
+}
+@mixin skin_success {
+  @include skin-variant($a_skin, $b_skin, $b_skin);
+}
+@mixin skin_transparent {
+  @include skin-variant($a_skin, transparent, $a_skin);
+}
+@mixin skin_warning {
+  @include skin-variant($white, $c_skin, $c_skin);
+}
+@mixin skin_custom($color, $background, $border) {
+  @include skin-variant($color, $background, $border);
+}
+@mixin button_prime {
+  /*replace skin_success*/
+  @include skin-variant($button_color_prime, $button_bg_prime, $button_border_prime);
+  @include border-radius($button_border_radius);
+}
+@mixin button_second {
+  /*replace skin_warning*/
+  @include skin-variant($button_color_second, $button_bg_second, $button_border_second);
+  @include border-radius($button_border_radius);
+}

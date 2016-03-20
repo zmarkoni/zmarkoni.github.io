@@ -1,0 +1,41 @@
+// ***********************************
+// LAYOUT
+// ***********************************
+
+$container_width        : 960px;
+$container_max_width    : 1024px;
+
+body{
+	font-family: $font-family-primary;
+    color: $body-text;
+    background: $body-bg;
+}
+
+.container {
+    padding: 50px 0;
+}
+// .container {
+//     position: relative;
+//     clear: both;
+//     margin-right: auto;
+//     margin-left: auto;
+//     padding-left:  0;
+//     padding-right: 0;
+//     width: 100%;
+//
+//
+//     @include breakpoint(greaterthansmall) {
+//         width: $container_width;
+//     }
+//
+//     @include breakpoint(tabletbig) {
+//         width: 800px;
+//         padding-left:  20px;
+//         padding-right: 20px;
+//     }
+// }
+
+
+.section {
+    position: relative;
+}

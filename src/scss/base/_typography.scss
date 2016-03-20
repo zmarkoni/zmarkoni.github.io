@@ -1,0 +1,41 @@
+// ***********************************
+// LINKS
+// ***********************************
+
+a, a:visited {
+	text-decoration:none;
+	color:$link_color;
+	@include transition-all(.5s);
+}
+a:hover, a:active, a:focus {
+	color:$link_hover;
+	@include transition-all(.5s);
+}
+
+
+// ***********************************
+// TYPOGRAPHY
+// ***********************************
+.h1,.h2,.h3,.h4,.h5,.h6
+h1,h2,h3,h4,h5,h6 {
+	font-family: $font-family-primary;
+	font-weight: $font-weight-title;
+    color: $color3;
+}
+
+h1, .h1 {
+    font-size: 63px;
+}
+
+h2, .h2 {
+    font-size: 54px;
+}
+
+h3, .h3 {
+    font-size: 28px;
+}
+
+.section_title,
+.section_subtitle {
+    text-align: center;
+}
