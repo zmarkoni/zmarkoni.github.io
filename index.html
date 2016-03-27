@@ -4,12 +4,330 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
+    <meta name="description" content="Zoran Markovic Online Resume">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <title>Document</title>
+    <title>Zoran Markovic</title>
+    <style>
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 55px;
+            z-index: 101;
+        }
 
-    <link rel="stylesheet" href="css/style.css">
+        // ***********************************
+        // NAVIGATION
+        // ***********************************
+        .navbar-collapse {
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 1px 22px rgba(0, 0, 0, 0.3);
+            z-index: 101;
+            #navbar-toggle-cbox {
+                display: none;
+            }
+            #navbar-toggle-cbox:checked ~ .collapse {
+                display: block;
+            }
+            @include breakpoint(big) {
+                .navbar-nav>li>a {
+                    padding: 0 15px;
+                    font-size: 12px;
+                }
+            }
+            @include breakpoint(greater-than-small) {
+                width: 100%;
+                height: 100%;
+                .navbar-nav {
+                    display: inline-block;
+                    margin: 0 auto;
+                    float: none;
+                }
+                .nav > li {
+                    position: relative;
+                    display: inline-block;
+                    float: none;
+                    // background: url(../img/divider.png) left no-repeat;
+                    text-align: center;
+                    transition: background-color 0.1s ease-out;
+                    &:active,
+                    &.active {
+                        a {
+                            color: $color1;
+                        }
+                        span {
+                            display: inline;
+                        }
+                    }
+                    &:not(.active):hover {
+                        // color: #171820;
+                    }
+                    &:first-child {
+                        background: none;
+                    }
+                    a {
+                        position: relative;
+                        display: inline-block;
+                        padding: 0 30px;
+                        line-height: 53px;
+                        text-align: center;
+                        cursor: pointer;
+                        // transition: background-color 0.2s ease-out;
+                        background: transparent;
+                        transition: all 0.3s ease;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        color: $color1;
+                        &:hover,
+                        &:focus {
+                            // background-color: $color4;
+                            color: $color5;
+                        }
+                        &.inactive {
+                            pointer-events: none;
+                            cursor: default;
+                            opacity: 0.5;
+                        }
+                    }
+                    span {
+                        position: absolute;
+                        background: $color1;
+                        z-index: 22;
+                        width: 100%;
+                        height: 5px;
+                        bottom: 0;
+                        left: 0;
+                        display: none;
+                    }
+                    .fa {
+                        display: none;
+                        font-size: 24px;
+                    }
+                }
+                .navbar-default .navbar-nav > .active > a,
+                .navbar-default .navbar-nav > .active > a:hover,
+                .navbar-default .navbar-nav > .active > a:focus {
+                    color: $color1;
+                    background: transparent;
+                }
+                .navbar-default .navbar-toggle:hover .icon-bar,
+                .navbar-default .navbar-toggle:focus .icon-bar {
+                    background: #222222;
+                }
+                .navbar-collapse .last {
+                    position: absolute;
+                    top: 0;
+                    // background: url(../img/divider.png) left no-repeat;
+                    right: 0;
+                    a {
+                        width: 55px;
+                        font-size: 20px;
+                        text-align: center;
+                        display: block;
+                        color: $color1;
+                        line-height: 53px;
+                        &:hover {
+                            color: $color5;
+                        }
+                    }
+                }
+            }
+            /*END greaterthansmall*/
+            @include breakpoint(medium) {
+                .navbar-collapse .last {
+                    display: none;
+                }
+                .navbar-toggle {
+                    padding: 0;
+                    margin-top: 13px;
+                    margin-right: 15px;
+                    margin-bottom: 0;
+                    border-radius: 0;
+                    cursor: pointer;
+                    .icon-bar {
+                        width: 30px;
+                        height: 4px;
+                        border-radius: 1px;
+                        background: $bg1;
+                    }
+                }
+                .navbar-header {
+                    height: 55px;
+                }
+                .navbar-nav {
+                    margin: 0;
+                    &>li>a {
+                        color: $color1;
+                        font-size: 12px;
+                        padding: 0 15px;
+                        text-transform: uppercase;
+                        text-align: center;
+                        // border-top: 1px solid $border2;
+                        .fa {
+                            display: none;
+                        }
+                    }
+                }
+                .nav>li>a:hover,
+                .nav>li>a:focus {
+                    background-color: transparent;
+                }
+            }
+            @include breakpoint(small) {
+                .navbar-nav>li>a {
+                    padding: 7px 15px;
+                }
+            }
+        }
+
+        .page_header {
+            position: relative;
+            float: left;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            z-index: 3;
+            .parallax {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 1000px;
+            }
+            .page_wrapper {
+                clear: both;
+                float: left;
+                width: 100%;
+                z-index: 3;
+                position: relative;
+                background-color: $bg1;
+            }
+            .header_bg {
+                position: relative;
+                float: left;
+                width: 100%;
+                background-image: url(/img/bg/header-bg.jpg);
+                background-repeat: no-repeat;
+                background-position: center center;
+                // background-size: 100%;
+                background-size: cover;
+                z-index: 100;
+            }
+            @include breakpoint(small) {
+                .parallax {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                    float: left;
+                    width: 100%;
+                    height: 568px;
+                }
+            }
+        }
+
+        .text_logo {
+            display: block;
+            position: absolute;
+            width: 850px;
+            height: 293px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            bottom: 35%;
+            padding: 0;
+            color: $color4;
+            text-align: center;
+            // background: $screen_bg;
+            .text {
+                white-space: nowrap;
+                overflow: hidden;
+                width: 850px;
+                animation: type 4s steps(30, end);
+                &:nth-child(2) {
+                    animation: type2 8s steps(30, end);
+                }
+                span {
+                    animation: blink 1s infinite;
+                }
+            }
+            // .blink {
+            //     animation: 5s linear 3s normal none infinite text_logo_animation;
+            // }
+            .my_name {
+                font-family: "Courier", Arial, sans-serif;
+                font-size: 100px;
+                margin-top: 70px;
+                margin-bottom: 20px;
+                // text-shadow: rgb(204, 204, 204) 0 1px 0px, rgb(201, 201, 201) 0 2px 0px, rgb(187, 187, 187) 0 3px 0px, rgb(185, 185, 185) 0 4px 0px, rgb(170, 170, 170) 0 5px 0px, rgba(0, 0, 0, 0.0980392) 0 6px 1px, rgba(0, 0, 0, 0.0980392) 0 0 5px, rgba(0, 0, 0, 0.298039) 0 1px 3px, rgba(0, 0, 0, 0.14902) 0 3px 5px, rgba(0, 0, 0, 0.2) 0 5px 10px, rgba(0, 0, 0, 0.2) 0 10px 10px, rgba(0, 0, 0, 0.0980392) 0 20px 20px;
+                border-bottom: 1px solid $border1;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                opacity: 1;
+            }
+            .resume_text {
+                font-family: "Courier", Arial, sans-serif;
+                font-size: 35px;
+            }
+            @include breakpoint(between-small-big) {
+                width: 700px;
+                .text {
+                    width: 700px;
+                }
+                .my_name {
+                    font-size: 70px;
+                }
+            }
+            @include breakpoint(small) {
+                width: 90%;
+                margin: 0 auto;
+                .text {
+                    width: 100%;
+                }
+                .my_name {
+                    font-size: 30px;
+                }
+                .resume_text {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        @keyframes type {
+            from {
+                width: 0;
+            }
+        }
+
+        @keyframes type2 {
+            0% {
+                width: 0;
+            }
+            50% {
+                width: 0;
+            }
+            100% {
+                width: 100;
+            }
+        }
+
+        @keyframes blink {
+            to {
+                opacity: 0.0;
+            }
+        }
+
+        .animated_text {
+            text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);
+        }
+    </style>
 </head>
 
 <body id="app" data-spy="scroll" data-target="#navbar-example">
@@ -123,6 +441,20 @@
 
         </div>
     </main>
+    <script>
+        var cb = function() {
+            var l = document.createElement('link');
+            l.rel = 'stylesheet';
+            l.href = 'css/style.css';
+            var h = document.getElementsByTagName('head')[0];
+            // h.parentNode.insertBefore(l, h);
+            h.appendChild(l);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+            webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(cb);
+        else window.addEventListener('load', cb);
+    </script>
     <script src="js/main.js" async></script>
 </body>
 
