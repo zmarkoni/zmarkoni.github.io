@@ -33,7 +33,12 @@ I was unable to add cashing to this website, because Google Pages does not suppo
 
 ## How to use
 
-Precompiled JS and SCSS files are in the src folder and compile to public.  All other files including HTML, image etc. are in public.  
+Precompiled JS and SCSS files are in the -> src <- folder and compile to public.  All other files including HTML, image etc. are in public.  
 
-BrowserSync runs from public and serves as the "Dist" folder for client-side apps.
+dist folder is used for production
 
+## Using JavaScript
+
+Browserify    -> load modules
+app.js        -> Application entry point where we load all modules like Header, Navigation, templates
+sandbox       -> contain global functions
